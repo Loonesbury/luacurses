@@ -18,6 +18,10 @@ main: $(OBJ)
 $(SRC):
 	$(CC) $(CFLAGS) $@
 
+luacurses.c: lc_lib.h lc_window.h lc_panel.h lc_chstr.h
+lc_lib.c: lc_lib.h lc_window.h
+lc_window.c: lc_lib.h lc_window.h
+
 clean:
 	@$(RM) $(OBJ) $(OUT)
 
